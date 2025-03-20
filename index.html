@@ -3,51 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper Data</title>
+    <title>MIGRATE</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            padding: 20px;
-            background-color: #f4f4f4;
+            font-family: "Helvetica", sans-serif;
             text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
             color: #333;
         }
-        a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+        h1 {
+            font-weight: bold;
+            font-size: 42px;
+            margin-top: 40px;
         }
-        a:hover {
-            background: #0056b3;
+        h2 {
+            font-weight: 300;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .authors {
+            margin-top: 20px;
+        }
+        .author {
+            font-family: "Helvetica", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .author a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        .author a:hover {
+            text-decoration: underline;
+        }
+        .affiliation {
+            font-size: 16px;
+            color: #666;
+        }
+        .buttons {
+            margin: 20px;
+        }
+        .button {
+            font-family: "Helvetica", sans-serif;
+            font-weight: 300;
+            text-decoration: none;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #444;
+        }
+        .section {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        .gif-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>MIGRATE: Inferring fine-grained migration patterns across the United States</h1>
-        <p>Here are the datasets and resources for my research paper.</p>
 
-        <h2>Read the Paper:</h2>
-        <a href="paper.pdf" download>Download Paper (PDF)</a>
+    <h1>MIGRATE</h1>
+    <h2>Inferring fine-grained migration patterns across the United States</h2>
 
-        <h2>Request Data Access:</h2>
-        <a href="data/dataset.csv" download>Download Dataset (CSV)</a>
-        <a href="data/processed_data.zip" download>Download Processed Data (ZIP)</a>
+    <div class="authors">
+        <div class="author">
+            <a href="AUTHOR1_WEBSITE" target="_blank">Gabriel Agostini</a>
+            <div class="affiliation">Cornell Tech</div>
+        </div>
+        <div class="author">
+            <a href="AUTHOR2_WEBSITE" target="_blank">Rachel M. Young</a>
+            <div class="affiliation">University of California, Berkeley</div>
+        </div>
+        <div class="author">
+            <a href="AUTHOR3_WEBSITE" target="_blank">Maria D. Fitzpatrick</a>
+            <div class="affiliation">Cornell University</div>
+        </div>
+        <div class="author">
+            <a href="AUTHOR4_WEBSITE" target="_blank">Nikhil Garg</a>
+            <div class="affiliation">Cornell Tech</div>
+        </div>
+        <div class="author">
+            <a href="AUTHOR5_WEBSITE" target="_blank">Emma Pierson</a>
+            <div class="affiliation">University of California, Berkeley</div>
+        </div>
+        <div style="margin-top: 10px; font-style: italic; color: #ff6600; font-weight: bold;">
+            -
+        </div>
     </div>
+
+    <div class="buttons">
+        <a href="LINK_TO_PAPER" class="button">Read the Paper</a>
+        <a href="LINK_TO_DATA_ACCESS" class="button">Request Data Access</a>
+    </div>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>MIGRATE (*M*igration *I*nference for *GRA*nular *T*rend *Estimation) is a dataset of yearly CBG-to-CBG flows in the United States. The data was designed to be highly concordant with publicly available Census flows and population counts. </p>
+        <div class="gif-container">
+            <img src="your_gif.gif" alt="MIGRATE GIF">
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Abstract</h2>
+        <p> Fine-grained migration data illuminate important demographic, environmental, and health phenomena. However, migration datasets within the United States remain lacking: publicly available Census data are neither spatially nor temporally granular, and proprietary data have higher resolution but demographic and other biases. To address these limitations, we develop a scalable iterative-proportional-fitting based method which reconciles high-resolution but biased proprietary data with low-resolution but more reliable Census data. We apply this method to produce \ourdataset, a dataset of annual migration matrices from 2010 - 2019 which captures flows between 47.4 billion pairs of Census Block Groups --- about four thousand times more granular than publicly available data. These estimates are highly correlated with external ground-truth datasets, and improve accuracy and reduce bias relative to raw proprietary data. We publicly release MIGRATE estimates and provide a case study illustrating how they reveal granular patterns of migration in response to California wildfires.</p>
+    </div>
+    
+
 </body>
 </html>
