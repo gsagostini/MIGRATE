@@ -88,7 +88,28 @@
 <body>
 
     <h1>MIGRATE</h1>
-    <h2>Inferring fine-grained migration patterns across the United States</h2>
+    <h2>A new dataset of fine-grained migration patterns</h2>
+    <div class="buttons">
+        <a href="LINK" class="button"> Request data access</a>
+    </div>
+    <div class="section">
+        <h2>Overview</h2>
+        <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) provides yearly CBG-to-CBG migration flows in the United States that are:</p>
+        <ul style="text-align: left; max-width: 600px; margin: 20px auto; padding-left: 40px;">
+            <li>thousands of times more granular than existing public migration datasets.</li>
+            <li>highly correlated with external Census datasets.</li>
+            <li>less biased, and more consistent with Census data, than proprietary address data.</li>
+        </ul>
+        <div class="gif-container">
+            <img src="figure.png" alt="MIGRATE GIF">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
+        <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.jpeg" alt="GitHub"> Code</a>
+        <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
+    </div>
 
     <div class="authors">
         <div class="author">
@@ -113,32 +134,6 @@
         </div>
     </div>
 
-    <div class="buttons">
-        <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
-        <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.jpeg" alt="GitHub"> Code</a>
-        <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
-    </div>
-
-    <div class="section">
-        <h2>Overview</h2>
-        <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) is a dataset of yearly CBG-to-CBG flows in the United States. The data was designed to be highly concordant with publicly available Census flows and population counts.</p>
-        <div class="gif-container">
-            <img src="figure.png" alt="MIGRATE GIF">
-        </div>
-    </div>
     
-    <div class="section">
-        <h2>Abstract</h2>
-        <p>Fine-grained migration data illuminate important demographic, environmental, and health phenomena. However, migration datasets within the United States remain lacking: publicly available Census data are neither spatially nor temporally granular, and proprietary data have higher resolution but demographic and other biases. To address these limitations, we develop a scalable iterative-proportional-fitting based method which reconciles high-resolution but biased proprietary data with low-resolution but more reliable Census data. We apply this method to produce MIGRATE, a dataset of annual migration matrices from 2010 - 2019 which captures flows between 47.4 billion pairs of Census Block Groups --- about four thousand times more granular than publicly available data. These estimates are highly correlated with external ground-truth datasets, and improve accuracy and reduce bias relative to raw proprietary data. We publicly release MIGRATE estimates and provide a case study illustrating how they reveal granular patterns of migration in response to California wildfires.</p>
-    </div>
-
-    
-    <div class="section">
-        <h2>Interested in data access?</h2>
-        <p>We would like MIGRATE to support further academic research! If you are an academic with a project in mind and would like to use the data, please fill the application form below.</p>
-        <div class="buttons">
-            <a href="LINK" class="button"> Request data access</a>
-        </div>
-    </div>
 </body>
 </html>
