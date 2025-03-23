@@ -5,331 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIGRATE</title>
     <style>
-        /* Base styles */
         body {
-            font-family: "Helvetica Neue Light", "Helvetica Neue", "Helvetica Light", "Helvetica", sans-serif;
-            font-weight: 300;
+            font-family: "Helvetica Light", "Helvetica", sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #fcfcfc;
+            background-color: #ffffff;
             color: #333;
-            line-height: 1.6;
         }
-        
-        /* Container with subtle gradient background */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            background: linear-gradient(to bottom, #ffffff, #f8f8f8);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.03);
-            border-radius: 0 0 20px 20px;
+        h1, h2 {
+            font-family: "Helvetica Bold", "Helvetica", sans-serif;
+            font-weight: bold;
         }
-        
-        /* Header styles */
-        header {
-            padding: 60px 0 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Subtle diagonal lines in background */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 115, 230, 0.02) 25%, transparent 25%) -20px 0,
-                        linear-gradient(225deg, rgba(0, 115, 230, 0.02) 25%, transparent 25%) -20px 0,
-                        linear-gradient(315deg, rgba(0, 115, 230, 0.02) 25%, transparent 25%),
-                        linear-gradient(45deg, rgba(0, 115, 230, 0.02) 25%, transparent 25%);
-            background-size: 40px 40px;
-            z-index: -1;
-        }
-        
         h1 {
-            font-family: "Helvetica Neue", "Helvetica", sans-serif;
-            font-weight: 700;
-            font-size: 56px;
-            margin: 0;
-            background: linear-gradient(to right, #0073e6, #00a6ed);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -1px;
+            font-size: 42px;
+            margin-top: 40px;
         }
-        
         h2 {
-            font-family: "Helvetica Neue", "Helvetica", sans-serif;
-            font-weight: 300;
             font-size: 24px;
-            margin: 15px 0 30px;
-            color: #555;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 20px;
         }
-        
-        /* Authors section - Modified for two rows */
         .authors {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            max-width: 600px;
+            margin: 20px auto;
         }
-        
-        .authors-row {
+        .author-row {
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
-        
-        .authors-row:last-child {
-            margin-bottom: 0;
-        }
-        
         .author {
             font-weight: 300;
             font-size: 18px;
-            margin: 15px 20px;
+            margin: 10px 20px;
             text-align: center;
-            width: 200px;
-            transition: transform 0.2s ease;
+            width: 30%;
         }
-        
-        .author:hover {
-            transform: translateY(-3px);
-        }
-        
         .author a {
             color: #0073e6;
             text-decoration: none;
-            font-weight: 400;
-            transition: all 0.2s ease;
-            display: inline-block;
-            padding-bottom: 2px;
-            border-bottom: 1px solid transparent;
         }
-        
         .author a:hover {
-            color: #005bb8;
-            border-bottom: 1px solid #005bb8;
+            text-decoration: underline;
         }
-        
         .affiliation {
             font-size: 16px;
-            color: #777;
-            margin-top: 5px;
+            color: #666;
         }
-        
-        /* Buttons */
         .buttons {
-            margin: 30px 0;
+            margin: 20px;
         }
-        
         .button {
-            font-family: "Helvetica Neue", "Helvetica", sans-serif;
-            font-weight: 400;
+            font-weight: 300;
             text-decoration: none;
-            background-color: white;
-            color: #0073e6;
-            padding: 14px 28px;
+            background-color: #fff;
+            color: #000;
+            padding: 12px 24px;
             margin: 10px;
-            border-radius: 8px;
+            border-radius: 5px;
             display: inline-flex;
             align-items: center;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #000;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        
         .button:hover {
-            background-color: #0073e6;
-            color: white;
-            border-color: #0073e6;
-            box-shadow: 0 4px 15px rgba(0, 115, 230, 0.2);
-            transform: translateY(-2px);
+            background-color: #000;
+            color: #fff;
         }
-        
         .button img {
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-            filter: brightness(1);
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
         }
-        
-        .button:hover img {
-            filter: brightness(5);
-        }
-        
-        /* Content sections */
         .section {
-            margin: 60px auto;
+            margin: 40px auto;
             max-width: 800px;
             padding: 0 20px;
         }
-        
-        .section h2 {
-            font-weight: 500;
-            font-size: 28px;
-            margin-bottom: 25px;
-            color: #333;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section h2::after {
-            content: "";
-            position: absolute;
-            left: 30%;
-            right: 30%;
-            bottom: -10px;
-            height: 3px;
-            background: linear-gradient(to right, rgba(0, 115, 230, 0.1), rgba(0, 115, 230, 0.5), rgba(0, 115, 230, 0.1));
-            border-radius: 3px;
-        }
-        
-        .section p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #444;
-        }
-        
-        /* List styling */
-        ul {
-            text-align: left;
-            max-width: 600px;
-            margin: 25px auto;
-            padding-left: 30px;
-        }
-        
-        li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 15px;
-            font-size: 18px;
-            color: #444;
-        }
-        
-        li::before {
-            content: "•";
-            color: #0073e6;
-            font-size: 20px;
-            position: absolute;
-            left: -15px;
-        }
-        
-        /* Image container */
-        .gif-container {
-            margin: 40px auto;
-            text-align: center;
-        }
-        
         .gif-container img {
             width: 100%;
-            max-width: 700px;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 600px;
+            border-radius: 10px;
         }
-        
-        .gif-container img:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Responsive adjustments */
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .authors-row {
+            h1 {
+                font-size: 32px;
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .author {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .author-row {
                 flex-direction: column;
                 align-items: center;
             }
-            
-            .author {
-                width: 100%;
-                max-width: 250px;
+            .buttons {
+                margin: 10px;
             }
-            
-            h1 {
-                font-size: 42px;
-            }
-        }
-        
-        @media (max-width: 480px) {
             .button {
-                display: block;
-                margin: 10px auto;
-                max-width: 200px;
+                padding: 10px 20px;
+                margin: 5px;
+                font-size: 14px;
+            }
+            .section {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+            .gif-container img {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>MIGRATE</h1>
-            <h2>A new dataset of fine-grained migration patterns</h2>
-            
-            <div class="buttons">
-                <a href="LINK" class="button">Request data access</a>
-            </div>
-        </header>
 
-        <div class="section">
-            <h2>Overview</h2>
-            <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) provides yearly CBG-to-CBG migration flows in the United States that are:</p>
-            <ul>
-                <li>thousands of times more granular than existing public migration datasets</li>
-                <li>highly correlated with external Census datasets</li>
-                <li>less biased, and more consistent with Census data, than proprietary address data</li>
-            </ul>
-            
-            <div class="gif-container">
-                <img src="figure.png" alt="MIGRATE visualization" />
+    <h1>MIGRATE</h1>
+    <h2>A new dataset of fine-grained migration patterns</h2>
+    <div class="buttons">
+        <a href="LINK" class="button"> Request data access</a>
+    </div>
+    <div class="section">
+        <h2>Overview</h2>
+        <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) provides yearly CBG-to-CBG migration flows in the United States that are:</p>
+        <ul style="text-align: left; max-width: 600px; margin: 20px auto; padding-left: 40px;">
+            <li>thousands of times more granular than existing public migration datasets.</li>
+            <li>highly correlated with external Census datasets.</li>
+            <li>less biased, and more consistent with Census data, than proprietary address data.</li>
+        </ul>
+        <div class="gif-container">
+            <img src="figure.png" alt="MIGRATE GIF">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
+        <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.jpeg" alt="GitHub"> Code</a>
+        <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
+    </div>
+
+    <div class="authors">
+        <div class="author-row">
+            <div class="author">
+                <a href="https://gsagostini.github.io" target="_blank">Gabriel Agostini</a>
+                <div class="affiliation">Cornell Tech</div>
+            </div>
+            <div class="author">
+                <a href="https://www.rachelmyoung.com/home" target="_blank">Rachel Young</a>
+                <div class="affiliation">UC Berkeley</div>
             </div>
         </div>
-
-        <div class="buttons">
-            <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
-            <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.png" alt="GitHub"> Code</a>
-            <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
-        </div>
-
-        <div class="authors">
-            <div class="authors-row">
-                <div class="author">
-                    <a href="https://gsagostini.github.io" target="_blank">Gabriel Agostini</a>
-                    <div class="affiliation">Cornell Tech</div>
-                </div>
-                <div class="author">
-                    <a href="https://www.rachelmyoung.com/home" target="_blank">Rachel Young</a>
-                    <div class="affiliation">UC Berkeley</div>
-                </div>
-                <div class="author">
-                    <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
-                    <div class="affiliation">Cornell University</div>
-                </div>
+        <div class="author-row">
+            <div class="author">
+                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
+                <div class="affiliation">Cornell University</div>
             </div>
-            <div class="authors-row">
-                <div class="author">
-                    <a href="https://gargnikhil.com" target="_blank">Nikhil Garg</a>
-                    <div class="affiliation">Cornell Tech</div>
-                </div>
-                <div class="author">
-                    <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">Emma Pierson</a>
-                    <div class="affiliation">UC Berkeley</div>
-                </div>
+            <div class="author">
+                <a href="https://gargnikhil.com" target="_blank">Nikhil Garg</a>
+                <div class="affiliation">Cornell Tech</div>
+            </div>
+            <div class="author">
+                <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">Emma Pierson</a>
+                <div class="affiliation">UC Berkeley</div>
             </div>
         </div>
     </div>
+
 </body>
 </html>
