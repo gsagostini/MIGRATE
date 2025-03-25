@@ -27,7 +27,7 @@
         }
         .content-wrapper {
             width: 100%;
-            max-width: 1000px; /* Increased from 1200px for better readability */
+            max-width: 1000px;
             padding: 0 20px;
             box-sizing: border-box;
         }
@@ -37,18 +37,18 @@
             margin: 40px auto;
             padding: 0 20px;
             box-sizing: border-box;
-            text-align: center; /* Center text for better alignment */
+            text-align: center;
         }
         
         .section ul {
-            text-align: left; /* Keep lists left-aligned for readability */
-            display: inline-block; /* Prevent full-width centering */
+            text-align: left;
+            display: inline-block;
         }
         h1, h2 {
             font-family: "Helvetica Bold", "Helvetica", sans-serif;
             font-weight: bold;
             margin: 20px 0;
-            color: #942092; /* Purple accent color */
+            color: #942092;
             text-align: center;
         }
         h1 {
@@ -109,17 +109,17 @@
             font-weight: 300;
             text-decoration: none;
             background-color: #fff;
-            color: #942092; /* Purple accent color */
+            color: #942092;
             padding: 12px 24px;
             margin: 10px;
             border-radius: 5px;
             display: inline-flex;
             align-items: center;
-            border: 1px solid #942092; /* Purple accent color */
+            border: 1px solid #942092;
             transition: all 0.3s ease;
         }
         .button:hover {
-            background-color: #942092; /* Purple accent color */
+            background-color: #942092;
             color: #fff;
         }
         .button img {
@@ -301,14 +301,33 @@
             const playOverlay = document.getElementById('playOverlay');
             const playButton = document.getElementById('playButton');
 
+            // Function to start autoplay
+            function startAutoplay() {
+                // Pause at the first frame
+                video.pause();
+                video.currentTime = 0;
+                playOverlay.style.display = 'flex';
+
+                // Wait 5 seconds before autoplaying
+                setTimeout(() => {
+                    video.play();
+                    playOverlay.style.display = 'none';
+                }, 5000);
+            }
+
+            // Manual play button
             playButton.addEventListener('click', () => {
                 video.play();
                 playOverlay.style.display = 'none';
             });
 
+            // Reset overlay when video ends
             video.addEventListener('ended', () => {
                 playOverlay.style.display = 'flex';
             });
+
+            // Start autoplay when page loads
+            startAutoplay();
         });
     </script>
 </body>
