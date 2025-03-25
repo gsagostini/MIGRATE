@@ -86,10 +86,31 @@
             max-width: 800px;
             padding: 0 20px;
         }
-        .gif-container img {
+        .video-container {
+            position: relative;
             width: 100%;
             max-width: 600px;
+            margin: 0 auto;
             border-radius: 10px;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .video-container .placeholder {
+            width: 100%;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+        .video-container:hover video {
+            opacity: 1;
+        }
+        .video-container:hover .placeholder {
+            opacity: 0;
         }
 
         /* Mobile Responsiveness */
@@ -122,9 +143,6 @@
                 margin: 20px auto;
                 padding: 0 10px;
             }
-            .gif-container img {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
@@ -144,15 +162,17 @@
             <li>less biased, and more consistent with Census data, than proprietary address data.</li>
         </ul>
         <p>We build MIGRATE using an iterative proportional fitting algorithm that reconciles fine-grained yet noisy proprietary address data with coarse yet reliable Census data.</p>
-        <div class="gif-container">
-            <img src="figure.png" alt="MIGRATE GIF">
+        <div class="video-container">
+            <img src="figure.png" alt="MIGRATE Placeholder" class="placeholder">
+            <video muted playsinline>
+                <source src="animation.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 
     <div class="section">
         <h2>Abstract</h2>
         <p>Fine-grained migration data illuminate important demographic, environmental, and health phenomena. However, migration datasets within the United States remain lacking: publicly available Census data are neither spatially nor temporally granular, and proprietary data have higher resolution but demographic and other biases. To address these limitations, we develop a scalable iterative-proportional-fitting based method which reconciles high-resolution but biased proprietary data with low-resolution but more reliable Census data. We apply this method to produce MIGRATE, a dataset of annual migration matrices from 2010 - 2019 which captures flows between 47.4 billion pairs of Census Block Groups–about four thousand times more granular than publicly available data. These estimates are highly correlated with external ground-truth datasets, and improve accuracy and reduce bias relative to raw proprietary data. We publicly release MIGRATE estimates and provide a case study illustrating how they reveal granular patterns of migration in response to California wildfires.</p>
-        </div>
     </div>
 
     <div class="buttons">
