@@ -62,20 +62,33 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 20px; /* More consistent spacing */
+            gap: 30px;
         }
         .author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             font-weight: 300;
             font-size: 18px;
             text-align: center;
-            white-space: nowrap; /* Keep each author on one line */
         }
-        .author a {
-            color: #0073e6;
+        .author-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border: 3px solid transparent;
+        }
+        .author-profile:hover {
+            transform: scale(1.1);
+            border-color: #942092;
+        }
+        .author-name {
+            margin-top: 10px;
+            color: #942092;
             text-decoration: none;
-        }
-        .author a:hover {
-            text-decoration: underline;
+            font-weight: bold;
         }
         .affiliation {
             font-size: 16px;
@@ -155,7 +168,7 @@
             height: 40px;
             fill: black;
         }
-
+        
         /* Mobile and Small Screen Responsiveness */
         @media (max-width: 768px) {
             .content-wrapper {
@@ -173,12 +186,11 @@
             .author-row {
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
+                gap: 20px;
             }
-            .author {
-                white-space: normal;
-                text-align: center;
-                width: 100%;
+            .author-profile {
+                width: 100px;
+                height: 100px;
             }
             .play-button {
                 width: 60px;
@@ -240,23 +252,38 @@
         <div class="authors">
             <div class="author-row">
                 <div class="author">
-                    <a href="https://gsagostini.github.io" target="_blank">Gabriel Agostini</a>
+                    <a href="https://gsagostini.github.io" target="_blank">
+                        <img src="authors/profile_gabriel.png" alt="Gabriel Agostini" class="author-profile">
+                    </a>
+                    <a href="https://gsagostini.github.io" target="_blank" class="author-name">Gabriel Agostini</a>
                     <div class="affiliation">Cornell Tech</div>
                 </div>
                 <div class="author">
-                    <a href="https://www.rachelmyoung.com/home" target="_blank">Rachel Young</a>
+                    <a href="https://www.rachelmyoung.com/home" target="_blank">
+                        <img src="authors/profile_rachel.png" alt="Rachel Young" class="author-profile">
+                    </a>
+                    <a href="https://www.rachelmyoung.com/home" target="_blank" class="author-name">Rachel Young</a>
                     <div class="affiliation">UC Berkeley</div>
                 </div>
                 <div class="author">
-                    <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
+                    <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">
+                        <img src="authors/profile_maria.jpg" alt="Maria Fitzpatrick" class="author-profile">
+                    </a>
+                    <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank" class="author-name">Maria Fitzpatrick</a>
                     <div class="affiliation">Cornell University</div>
                 </div>
                 <div class="author">
-                    <a href="https://gargnikhil.com" target="_blank">Nikhil Garg</a>
+                    <a href="https://gargnikhil.com" target="_blank">
+                        <img src="authors/profile_garg.webp" alt="Nikhil Garg" class="author-profile">
+                    </a>
+                    <a href="https://gargnikhil.com" target="_blank" class="author-name">Nikhil Garg</a>
                     <div class="affiliation">Cornell Tech</div>
                 </div>
                 <div class="author">
-                    <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">Emma Pierson</a>
+                    <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">
+                        <img src="authors/profile_emma.jpg" alt="Emma Pierson" class="author-profile">
+                    </a>
+                    <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank" class="author-name">Emma Pierson</a>
                     <div class="affiliation">UC Berkeley</div>
                 </div>
             </div>
