@@ -97,20 +97,6 @@
         .video-container video {
             width: 100%;
             border-radius: 10px;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-        .video-container .placeholder {
-            width: 100%;
-            border-radius: 10px;
-            transition: opacity 0.3s ease;
-            opacity: 1;
-        }
-        .video-container:hover video {
-            opacity: 1;
-        }
-        .video-container:hover .placeholder {
-            opacity: 0;
         }
 
         /* Mobile Responsiveness */
@@ -163,9 +149,10 @@
         </ul>
         <p>We build MIGRATE using an iterative proportional fitting algorithm that reconciles fine-grained yet noisy proprietary address data with coarse yet reliable Census data.</p>
         <div class="video-container">
-            <img src="figure.png" alt="MIGRATE Placeholder" class="placeholder">
             <video muted playsinline>
                 <source src="animation.mp4" type="video/mp4">
+                <source src="animation.webm" type="video/webm">
+                Your browser does not support the video tag.
             </video>
         </div>
     </div>
@@ -192,7 +179,7 @@
                 <div class="affiliation">UC Berkeley</div>
             </div>
             <div class="author">
-                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
+                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatick/" target="_blank">Maria Fitzpatrick</a>
                 <div class="affiliation">Cornell University</div>
             </div>
             <div class="author">
