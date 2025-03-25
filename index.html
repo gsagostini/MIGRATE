@@ -5,45 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIGRATE</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
         body {
             font-family: "Helvetica Light", "Helvetica", sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
             background-color: #ffffff;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         h1, h2 {
             font-family: "Helvetica Bold", "Helvetica", sans-serif;
             font-weight: bold;
+            margin: 20px 0;
+            color: #942092; /* Purple accent color */
         }
         h1 {
             font-size: 42px;
-            margin-top: 40px;
         }
         h2 {
             font-size: 24px;
-            margin-bottom: 20px;
         }
         .authors {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 600px;
+            width: 100%;
+            max-width: 800px;
             margin: 20px auto;
         }
         .author-row {
             display: flex;
-            justify-content: center;
-            width: 100%;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .author {
             font-weight: 300;
             font-size: 18px;
             margin: 10px 20px;
             text-align: center;
-            width: 30%;
+            width: calc(20% - 40px);
+            min-width: 150px;
         }
         .author a {
             color: #0073e6;
@@ -57,23 +68,26 @@
             color: #666;
         }
         .buttons {
-            margin: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .button {
             font-weight: 300;
             text-decoration: none;
             background-color: #fff;
-            color: #000;
+            color: #942092; /* Purple accent color */
             padding: 12px 24px;
             margin: 10px;
             border-radius: 5px;
             display: inline-flex;
             align-items: center;
-            border: 1px solid #000;
+            border: 1px solid #942092; /* Purple accent color */
             transition: all 0.3s ease;
         }
         .button:hover {
-            background-color: #000;
+            background-color: #942092; /* Purple accent color */
             color: #fff;
         }
         .button img {
@@ -82,20 +96,23 @@
             margin-right: 8px;
         }
         .section {
-            margin: 40px auto;
+            width: 100%;
             max-width: 800px;
+            margin: 40px auto;
             padding: 0 20px;
+            box-sizing: border-box;
         }
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             border-radius: 10px;
             overflow: hidden;
         }
         .video-container video {
             width: 100%;
+            height: auto;
             border-radius: 10px;
         }
         .play-overlay {
@@ -136,31 +153,13 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 32px;
-                margin-top: 20px;
             }
             h2 {
                 font-size: 20px;
-                margin-bottom: 15px;
             }
             .author {
-                width: 100%;
-                margin: 10px 0;
-            }
-            .author-row {
-                flex-direction: column;
-                align-items: center;
-            }
-            .buttons {
+                width: calc(50% - 40px);
                 margin: 10px;
-            }
-            .button {
-                padding: 10px 20px;
-                margin: 5px;
-                font-size: 14px;
-            }
-            .section {
-                margin: 20px auto;
-                padding: 0 10px;
             }
             .play-button {
                 width: 60px;
@@ -170,69 +169,73 @@
     </style>
 </head>
 <body>
+    <div class="content-wrapper">
+        <h1>MIGRATE</h1>
+        <h2>A new dataset of fine-grained migration patterns in the United States</h2>
+        
+        <div class="buttons">
+            <a href="LINK" class="button"> Request data access</a>
+        </div>
 
-    <h1>MIGRATE</h1>
-    <h2>A new dataset of fine-grained migration patterns in the United States</h2>
-    <div class="buttons">
-        <a href="LINK" class="button"> Request data access</a>
-    </div>
-    <div class="section">
-        <h2>Overview</h2>
-        <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) provides yearly CBG-to-CBG migration flows in the United States that are:</p>
-        <ul style="text-align: left; max-width: 600px; margin: 20px auto; padding-left: 40px;">
-            <li>thousands of times more granular than existing public migration datasets.</li>
-            <li>highly correlated with external Census datasets.</li>
-            <li>less biased, and more consistent with Census data, than proprietary address data.</li>
-        </ul>
-        <p>We build MIGRATE using an iterative proportional fitting algorithm that reconciles fine-grained yet noisy proprietary address data with coarse yet reliable Census data.</p>
-        <div class="video-container" id="videoContainer">
-            <video id="migrationVideo" muted playsinline>
-                <source src="animation.mp4" type="video/mp4">
-                <source src="animation.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            <div class="play-overlay" id="playOverlay">
-                <button class="play-button" id="playButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
+        <div class="section">
+            <h2>Overview</h2>
+            <p>MIGRATE (<b>M</b>igration <b>I</b>nference for <b>GRA</b>nular <b>T</b>rend <b>E</b>stimation) provides yearly CBG-to-CBG migration flows in the United States that are:</p>
+            <ul style="text-align: left; max-width: 600px; margin: 20px auto; padding-left: 40px;">
+                <li>thousands of times more granular than existing public migration datasets.</li>
+                <li>highly correlated with external Census datasets.</li>
+                <li>less biased, and more consistent with Census data, than proprietary address data.</li>
+            </ul>
+            <p>We build MIGRATE using an iterative proportional fitting algorithm that reconciles fine-grained yet noisy proprietary address data with coarse yet reliable Census data.</p>
+            
+            <div class="video-container" id="videoContainer">
+                <video id="migrationVideo" muted playsinline>
+                    <source src="animation.mp4" type="video/mp4">
+                    <source src="animation.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-overlay" id="playOverlay">
+                    <button class="play-button" id="playButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Abstract</h2>
-        <p>Fine-grained migration data illuminate important demographic, environmental, and health phenomena. However, migration datasets within the United States remain lacking: publicly available Census data are neither spatially nor temporally granular, and proprietary data have higher resolution but demographic and other biases. To address these limitations, we develop a scalable iterative-proportional-fitting based method which reconciles high-resolution but biased proprietary data with low-resolution but more reliable Census data. We apply this method to produce MIGRATE, a dataset of annual migration matrices from 2010 - 2019 which captures flows between 47.4 billion pairs of Census Block Groups–about four thousand times more granular than publicly available data. These estimates are highly correlated with external ground-truth datasets, and improve accuracy and reduce bias relative to raw proprietary data. We publicly release MIGRATE estimates and provide a case study illustrating how they reveal granular patterns of migration in response to California wildfires.</p>
-    </div>
+        <div class="section">
+            <h2>Abstract</h2>
+            <p>Fine-grained migration data illuminate important demographic, environmental, and health phenomena. However, migration datasets within the United States remain lacking: publicly available Census data are neither spatially nor temporally granular, and proprietary data have higher resolution but demographic and other biases. To address these limitations, we develop a scalable iterative-proportional-fitting based method which reconciles high-resolution but biased proprietary data with low-resolution but more reliable Census data. We apply this method to produce MIGRATE, a dataset of annual migration matrices from 2010 - 2019 which captures flows between 47.4 billion pairs of Census Block Groups–about four thousand times more granular than publicly available data. These estimates are highly correlated with external ground-truth datasets, and improve accuracy and reduce bias relative to raw proprietary data. We publicly release MIGRATE estimates and provide a case study illustrating how they reveal granular patterns of migration in response to California wildfires.</p>
+        </div>
 
-    <div class="buttons">
-        <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
-        <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.png" alt="GitHub"> Code</a>
-        <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
-    </div>
+        <div class="buttons">
+            <a href="LINK" class="button"><img src="icons/paper.png" alt="Paper"> Paper</a>
+            <a href="https://github.com/gsagostini/MIGRATE" class="button"><img src="icons/github.png" alt="GitHub"> Code</a>
+            <a href="mailto:gsagostini@infosci.cornell.edu" class="button"><img src="icons/email.png" alt="Email"> Email</a>
+        </div>
 
-    <div class="authors">
-        <div class="author-row">
-            <div class="author">
-                <a href="https://gsagostini.github.io" target="_blank">Gabriel Agostini</a>
-                <div class="affiliation">Cornell Tech</div>
-            </div>
-            <div class="author">
-                <a href="https://www.rachelmyoung.com/home" target="_blank">Rachel Young</a>
-                <div class="affiliation">UC Berkeley</div>
-            </div>
-            <div class="author">
-                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
-                <div class="affiliation">Cornell University</div>
-            </div>
-            <div class="author">
-                <a href="https://gargnikhil.com" target="_blank">Nikhil Garg</a>
-                <div class="affiliation">Cornell Tech</div>
-            </div>
-            <div class="author">
-                <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">Emma Pierson</a>
-                <div class="affiliation">UC Berkeley</div>
+        <div class="authors">
+            <div class="author-row">
+                <div class="author">
+                    <a href="https://gsagostini.github.io" target="_blank">Gabriel Agostini</a>
+                    <div class="affiliation">Cornell Tech</div>
+                </div>
+                <div class="author">
+                    <a href="https://www.rachelmyoung.com/home" target="_blank">Rachel Young</a>
+                    <div class="affiliation">UC Berkeley</div>
+                </div>
+                <div class="author">
+                    <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
+                    <div class="affiliation">Cornell University</div>
+                </div>
+                <div class="author">
+                    <a href="https://gargnikhil.com" target="_blank">Nikhil Garg</a>
+                    <div class="affiliation">Cornell Tech</div>
+                </div>
+                <div class="author">
+                    <a href="https://people.eecs.berkeley.edu/~emmapierson/" target="_blank">Emma Pierson</a>
+                    <div class="affiliation">UC Berkeley</div>
+                </div>
             </div>
         </div>
     </div>
