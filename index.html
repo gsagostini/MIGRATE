@@ -19,18 +19,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.6;
         }
         .content-wrapper {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px; /* Increased from 1200px for better readability */
             padding: 0 20px;
             box-sizing: border-box;
+        }
+        .section {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            text-align: left; /* Left-align text for better readability */
         }
         h1, h2 {
             font-family: "Helvetica Bold", "Helvetica", sans-serif;
             font-weight: bold;
             margin: 20px 0;
             color: #942092; /* Purple accent color */
+            text-align: center;
         }
         h1 {
             font-size: 42px;
@@ -40,21 +50,21 @@
         }
         .authors {
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
         }
         .author-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            gap: 20px; /* More consistent spacing */
         }
         .author {
             font-weight: 300;
             font-size: 18px;
-            margin: 10px 20px;
             text-align: center;
-            width: calc(20% - 40px);
-            min-width: 150px;
+            white-space: nowrap; /* Keep each author on one line */
         }
         .author a {
             color: #0073e6;
@@ -94,13 +104,6 @@
             width: 16px;
             height: 16px;
             margin-right: 8px;
-        }
-        .section {
-            width: 100%;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            box-sizing: border-box;
         }
         .video-container {
             position: relative;
@@ -149,21 +152,37 @@
             fill: black;
         }
 
-        /* Mobile Responsiveness */
+        /* Mobile and Small Screen Responsiveness */
         @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 0 10px;
+            }
             h1 {
                 font-size: 32px;
             }
             h2 {
                 font-size: 20px;
             }
+            .section {
+                padding: 0 10px;
+            }
+            .author-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
             .author {
-                width: calc(50% - 40px);
-                margin: 10px;
+                white-space: normal;
+                text-align: center;
+                width: 100%;
             }
             .play-button {
                 width: 60px;
                 height: 60px;
+            }
+            p, ul {
+                text-align: left;
+                padding: 0 10px;
             }
         }
     </style>
