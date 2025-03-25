@@ -147,11 +147,15 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 10;
+            transition: opacity 0.3s ease;
+        }
+        .video-container:hover .play-overlay {
+            display: flex;
         }
         .play-button {
             width: 80px;
@@ -306,12 +310,13 @@
                 // Pause at the first frame
                 video.pause();
                 video.currentTime = 0;
-                playOverlay.style.display = 'flex';
+                
+                // Hide the overlay initially
+                playOverlay.style.display = 'none';
 
                 // Wait 5 seconds before autoplaying
                 setTimeout(() => {
                     video.play();
-                    playOverlay.style.display = 'none';
                 }, 5000);
             }
 
