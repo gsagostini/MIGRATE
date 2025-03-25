@@ -98,6 +98,39 @@
             width: 100%;
             border-radius: 10px;
         }
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        .play-button svg {
+            width: 40px;
+            height: 40px;
+            fill: black;
+        }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -129,6 +162,10 @@
                 margin: 20px auto;
                 padding: 0 10px;
             }
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -148,12 +185,19 @@
             <li>less biased, and more consistent with Census data, than proprietary address data.</li>
         </ul>
         <p>We build MIGRATE using an iterative proportional fitting algorithm that reconciles fine-grained yet noisy proprietary address data with coarse yet reliable Census data.</p>
-        <div class="video-container">
-            <video muted playsinline>
+        <div class="video-container" id="videoContainer">
+            <video id="migrationVideo" muted playsinline>
                 <source src="animation.mp4" type="video/mp4">
                 <source src="animation.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
+            <div class="play-overlay" id="playOverlay">
+                <button class="play-button" id="playButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -179,7 +223,7 @@
                 <div class="affiliation">UC Berkeley</div>
             </div>
             <div class="author">
-                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatick/" target="_blank">Maria Fitzpatrick</a>
+                <a href="https://publicpolicy.cornell.edu/people/maria-fitzpatrick/" target="_blank">Maria Fitzpatrick</a>
                 <div class="affiliation">Cornell University</div>
             </div>
             <div class="author">
@@ -193,5 +237,21 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('migrationVideo');
+            const playOverlay = document.getElementById('playOverlay');
+            const playButton = document.getElementById('playButton');
+
+            playButton.addEventListener('click', () => {
+                video.play();
+                playOverlay.style.display = 'none';
+            });
+
+            video.addEventListener('ended', () => {
+                playOverlay.style.display = 'flex';
+            });
+        });
+    </script>
 </body>
 </html>
