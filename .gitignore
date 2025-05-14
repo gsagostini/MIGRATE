@@ -1,1 +1,3 @@
 **/*.ipynb_checkpoints/
+plots/*
+!plots/.gitkeep
