@@ -14,8 +14,8 @@ import scipy.sparse as ss
 from datetime import datetime, timedelta
 
 #Updating a csc matrix is costly, do it sparingly!!!
-#import warnings
-#warnings.filterwarnings("ignore", category=ss.SparseEfficiencyWarning)
+import warnings
+warnings.filterwarnings("ignore", category=ss.SparseEfficiencyWarning)
 
 
 import sys
