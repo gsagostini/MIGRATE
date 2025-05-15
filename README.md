@@ -22,12 +22,11 @@ A `.yml` file is provided with all required packages and their versions. Please 
 │
 ├── d01_data                                      <- Ommitted from the public release---check individual notebooks and source code for notes
 │
-├── d02_notebooks                                 <- Jupyter notebooks that process datasets and analyse results
-│   ├── 1_Data.ipynb                              <- Process Census data
-│   ├── 2_Validations.ipynb                       <- Validate MIGRATE outputs (refer to section 2.2 of the paper)
-│   ├── 3_National-Summaries.ipynb                <- Produce national-level migration summaries (refer to sections 2.1 and 2.3 of the paper)
-│   ├── 4_Wildfires.ipynb                         <- Analyze migration in response to wildfires (refer to section 2.4 of the paper)
-│   └── 5_Public-Housing.ipynb                    <- Analyze migration to and from New York City Housing Authority properties (refer to Appendix G of the paper)
+├── d02_notebooks                                 <- Jupyter notebooks that analyse results and produce figures for the paper
+│   ├── 1_Validations.ipynb                       <- Validate MIGRATE outputs (refer to section 2.2 of the paper)
+│   ├── 2_National-Summaries.ipynb                <- Produce national-level migration summaries (refer to sections 2.1 and 2.3 of the paper)
+│   ├── 3_Wildfires.ipynb                         <- Analyze migration in response to wildfires (refer to section 2.4 of the paper)
+│   └── 4_Public-Housing.ipynb                    <- Analyze migration to and from New York City Housing Authority properties (refer to Appendix G of the paper)
 │
 ├── d03_src                                       <- Source code for use in this project, which can be imported as modules into the notebooks and scripts
 │
