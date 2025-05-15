@@ -1,3 +1,4 @@
 **/*.ipynb_checkpoints/
 plots/*
 !plots/.gitkeep
+**/__pycache__/**
