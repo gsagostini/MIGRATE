@@ -14,13 +14,13 @@ Some datasets are missing from this code release because they are proprietary (e
 
 ## Installation
 
-A `.yml` file is provided with all required packages and their versions. Please update the `d03_src.vars.py` file with your path to the repository `_path_to_repo` to ensure all functions work correctly.
+A `.yml` file is provided with all required packages and their versions. Please update the `d03_src.vars.py` file with your path to the repository `_path_to_repo` to ensure all functions work correctly. Note that some datasets may be missing and need to be downloaded from the Census website.
 
 ## Repository Setup
 
 ```
 │
-├── d01_data                                      <- Ommitted from the public release---check individual notebooks and source code for notes
+├── d01_data                                      <- Ommitted from the code release---check individual notebooks and source code for notes
 │
 ├── d02_notebooks                                 <- Jupyter notebooks that analyse results and produce figures for the paper
 │   ├── 1_Validations.ipynb                       <- Validate MIGRATE outputs (refer to section 2.2 of the paper)
