@@ -344,6 +344,18 @@ def get_yearly_ACS_responses(address_history,
                              min_year=0, max_year=np.inf):
     """
     For an address history, get the yearly ACS responses (estimated)
+
+    Returns
+    ----------
+    list
+        entries are 4-tuples of the format
+        
+        (YEAR, ORIGIN_ADDRID, DEST_ADDRID, PROBABILITY)
+
+        Selecting all entries of the year and mapping IDs to indices
+        will generate a COO sparse matrix. Note that for the first and
+        last years when an individual is active the probabilities may not
+        sum to 1.
     """
     #Separate month and year:
     address_history_df = pd.DataFrame(address_history).T
@@ -407,6 +419,15 @@ def aggregate_individual_responses(individual_responses, verbose=False):
     """
     Takes a series of individual responses an aggregates into a dataframe
         of population ACS responses
+
+    Returns
+    ----------
+    pd.Series
+        columns are `year`, `origin`, `destination`, and `flow`
+        
+        `year`: year when move would be reported i.e. when ACS would be answered
+        `origin` and `destination`: ADDRID
+        `flow`: expected flow for the whole population (i.e. aggregates individual probabilities)
     """
 
     #Get a full list of tuples and turn it into a dataframe:
