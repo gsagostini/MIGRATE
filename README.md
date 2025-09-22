@@ -4,21 +4,37 @@ Welcome to the workshop! Here I have all the links, datasets, and notebooks for 
 
 ## Installation
 
-### Option 1: cloning the repository
+### Option 1: cloning the repository (preferred method)
 
 Clone only this branch (otherwise you will have a lot of files!):
 
 ```git clone -b workshop --single-branch https://github.com/gsagostini/MIGRATE.git```
 
-Create a conda environment using the following command:
+Create a conda environment with geopandas and supporting jupyter notebooks using the following command:
 
-```conda create -n workshop_env python=3.13.5 geopandas numpy pandas matplotlib -c conda-forge```
+```conda create -n workshop_env python=3.13.5 geopandas numpy pandas matplotlib ipykernel jupyterlab -c conda-forge```
 
-Then remember to activate the environment `workshop_env` before starting a notebook.
+Then remember to activate the environment `workshop_env` before starting a notebook, for example, with VSCode or jupyter lab.
 
 ### Option 2: using Google collab
 
-You can also choose to follow along on [Google collab](https://colab.research.google.com). Instructions to come...
+You can also choose to follow along on [Google collab](https://colab.research.google.com).
+
+1. Go to `File > Open notebook`.
+2. Select `Github`.
+3. Paste the repo url: `https://github.com/gsagostini/MIGRATE/tree/workshop`.
+4. Make sure you select `workshop` as the branch.
+5. Open the notebook you would like to follow.
+
+For the `mapping.ipynb` notebook, you will need to mount the drive data folder. If you follow this route, come up to me and I will share with you the drive data folder---I need your email. You need to click `Add shortcut to your drive` to add the shared `data` folder to your drive. You will then add the following cell to the top of the notebook:
+
+```
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+You will log in to your drive and authenticate. Then, copy the notebook to your drive. You can then use the path `drive/MyDrive/data/` anywhere you see `data/` or `../data/`
+
 
 ## Activity 1: Understanding the limits of Census migration data
 
@@ -41,4 +57,4 @@ For this activity, you can follow the notebook `IPF.ipynb`. Also, you may want p
 
 ## Activity 3: Mapping fine-grained Migration data
 
-For this activity, you can follow the notebook `mapping.ipynb`. You will need some publicly available datasets, which are in the `data` directory, and MIGRATE. After filling the Workshop [DUA](https://forms.gle/MCezhZGDREvbYBMK7), you received a link to the subsection of MIGRATE we will use via Google Drive. Add MIGRATE to the `data` directory. Please remember to delete the dataset afterwards.
+For this activity, you can follow the notebook `mapping.ipynb`. You will need some publicly available datasets, which are in the `data` directory, and MIGRATE. After filling the Workshop [DUA](https://forms.gle/MCezhZGDREvbYBMK7), you received a link to the subsection of MIGRATE we will use via Google Drive. Add MIGRATE to the `data` directory if you locally cloned the repository, and . Please remember to delete the dataset afterwards.
