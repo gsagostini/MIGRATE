@@ -12,13 +12,13 @@ Clone only this branch (otherwise you will have a lot of files!):
 
 Create a conda environment using the following command:
 
-```conda create ...```
+```conda create -n workshop_env python=3.13.5 geopandas numpy pandas matplotlib -c conda-forge```
 
-Then remember to activate the environment before starting a notebook.
+Then remember to activate the environment `workshop_env` before starting a notebook.
 
 ### Option 2: using Google collab
 
-You can also choose to follow along on [Google collab](https://colab.research.google.com). 
+You can also choose to follow along on [Google collab](https://colab.research.google.com). Instructions to come...
 
 ## Activity 1: Understanding the limits of Census migration data
 
