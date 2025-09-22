@@ -6,7 +6,11 @@ Welcome to the workshop! Here I have all the links, datasets, and notebooks for 
 
 ### Option 1: cloning the repository
 
-Clone the repository and create a conda environment using the following command:
+Clone only this branch (otherwise you will have a lot of files!):
+
+```git clone -b workshop --single-branch https://github.com/gsagostini/MIGRATE.git```
+
+Create a conda environment using the following command:
 
 ```conda create ...```
 
