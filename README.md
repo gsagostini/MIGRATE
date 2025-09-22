@@ -41,4 +41,4 @@ For this activity, you can follow the notebook `IPF.ipynb`. Also, you may want p
 
 ## Activity 3: Mapping fine-grained Migration data
 
-For this activity, you can follow either the notebook `mapping_income.ipynb` or the notebook `mapping_wildfires.ipynb`, depending on your choice. You will need some publicly available datasets, which are in the `data` directory, and MIGRATE. After filling the Workshop [DUA](https://forms.gle/MCezhZGDREvbYBMK7), you received a link to the subsection of MIGRATE we will use via Google Drive. Add MIGRATE to the `data` directory. Please remember to delete the dataset afterwards.
+For this activity, you can follow the notebook `mapping.ipynb`. You will need some publicly available datasets, which are in the `data` directory, and MIGRATE. After filling the Workshop [DUA](https://forms.gle/MCezhZGDREvbYBMK7), you received a link to the subsection of MIGRATE we will use via Google Drive. Add MIGRATE to the `data` directory. Please remember to delete the dataset afterwards.
