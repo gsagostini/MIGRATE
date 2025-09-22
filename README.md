@@ -24,12 +24,12 @@ For this activity, you will download and follow the prompt questions to investig
 2. Select the 2015-2019 data file.
     <b> To think about while you look at the data: </b> what do these years represent?
 3. Download the `In-, Out-, Net, and Gross Migration` file under `County-to-County`.
-    <b> Note: </b> this is an excel (.xls) file---if you don't have the software to open this file, team up with someone who does.
+    - <b> Note: </b> this is an excel (.xls) file---if you don't have the software to open this file, team up with someone who does.
 4. Take some time to understand the rows, columns, and sheets in the dataset.
-    <b>Discuss with your partner: </b> what column(s) (if any), would you primarily use to estimate the migration from one county to another? Do you understand what every column represents?
-    <b>Wait!</b> We will try to make sure everyone is on the same page after 5 minutes---feel free to think about the questions below, but don't bring up their answers to other groups.
-    <b>Discuss with your partner: </b> can you tell, from this data, how many people moved from
-    <b>Discuss with your partner: </b> what is the time period over which the migration described in the dataset is happening? As a hint, you may want to take a look at the `Inflow` file in the ACS website, and also think about the dates when the ACS was collected.
+    - <b>Discuss with your partner: </b> what column(s) (if any), would you primarily use to estimate the migration from one county to another? Do you understand what every column represents?
+    - <b>Wait!</b> We will try to make sure everyone is on the same page after 5 minutes---feel free to think about the questions below, but don't bring up their answers to other groups.
+    - <b>Discuss with your partner: </b> can you tell, from this data, how many people moved from Los Angeles County (CA) to New York County (NY)? To Appling County (GA)?
+    - <b>Discuss with your partner: </b> what is the time period over which the migration described in the dataset is happening? As a hint, you may want to take a look at the `Inflow` file in the ACS website, and also think about the dates when the ACS was collected.
 
 ## Activity 2: Implementing Iterative Proportional Fitting --- and our variation!
 
