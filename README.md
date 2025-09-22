@@ -1,40 +1,40 @@
-# MIGRATE
+# Inferring Migration Flows Workshop outline
 
-This code accompanies the paper `Inferring Fine-Grained Migration Patterns Across the United States` ([current version](https://arxiv.org/abs/2503.20989)). If using either the data or the code, please cite the paper:
-
-```
-Agostini, G., Young, R., Fitzpatrick, M., Garg, N., & Emma, P. (2025). Inferring Fine-Grained Migration Patterns Across the United States. https://doi.org/10.48550/arXiv.2503.20989
-```
-
-## Data availability
-
-If you would like to request access to the MIGRATE dataset, follow the instructions on the [project website](https://migrate.tech.cornell.edu). We grant data access to academic and non-profit research use.
-
-Some datasets are missing from this code release because they are proprietary (e.g. raw Infutor data will not be provided) or heavy yet publicly available (e.g. raw Census geographies). The paper contains citations to datasets, and some notebooks in the repo note where to obtain the raw data. Feel free to email gsagostini@infosci.cornell.edu with any questions.
+Welcome to the workshop! Here I have all the links, datasets, and notebooks for our interactive activities. If you would like to checkout the paper after the workshop, this is the most [current version](https://arxiv.org/abs/2503.20989).
 
 ## Installation
 
-A `.yml` file is provided with all required packages and their versions. Please update the `d03_src.vars.py` file with your path to the repository `_path_to_repo` to ensure all functions work correctly. Note that some datasets may be missing and need to be downloaded from the Census website.
+### Option 1: cloning the repository
 
-## Repository Setup
+Clone the repository and create a conda environment using the following command:
 
-```
-│
-├── d01_data                                      <- Ommitted from the code release---check individual notebooks and source code for notes
-│
-├── d02_notebooks                                 <- Jupyter notebooks that analyse results and produce figures for the paper
-│   ├── 1_Process-Infutor.ipynb                   <- Detailing functions used to process INFUTOR data into yearly flow matrices (refer to Section M.1 of the paper)
-│   ├── 2_Validations.ipynb                       <- Validate MIGRATE outputs (refer to section 2.2 of the paper)
-│   ├── 3_National-Summaries.ipynb                <- Produce national-level migration summaries (refer to sections 2.1 and 2.3 of the paper)
-│   ├── 4_Wildfires.ipynb                         <- Analyze migration in response to wildfires (refer to section 2.4 of the paper)
-│   ├── 5_Public-Housing.ipynb                    <- Analyze migration to and from New York City Housing Authority properties (refer to Appendix G of the paper)
-│   └── 6_Synthetic-Validations.ipynb             <- Analyze synthetic experiments verifying that our harmonization procedure works (refer to Appendix A.2. of the paper)
-│
-├── d03_src                                       <- Source code for use in this project, which can be imported as modules into the notebooks and scripts
-│
-└─── d04_scripts                                  <- Full code routines to process address history data + fit the models
-    ├── d01_read-files                            <- Scripts to read raw address histories
-    ├── d02_process-addresses                     <- Scripts to geocode and clean address histories
-    ├── d03_process-flows                         <- Scripts to process address histories into flow matrices
-    └── d04_optimization                          <- Scripts to run our model            
-```
+```conda create ...```
+
+Then remember to activate the environment before starting a notebook.
+
+### Option 2: using Google collab
+
+You can also choose to follow along on [Google collab](https://colab.research.google.com). 
+
+## Activity 1: Understanding the limits of Census migration data
+
+For this activity, you will download and follow the prompt questions to investigate the ACS county-to-county migration data portal.
+
+1. Navigate to the ACS county-to-county [migration data portal](https://www.census.gov/topics/population/migration/guidance/county-to-county-migration-flows.html).
+2. Select the 2015-2019 data file.
+    <b> To think about while you look at the data: </b> what do these years represent?
+3. Download the `In-, Out-, Net, and Gross Migration` file under `County-to-County`.
+    <b> Note: </b> this is an excel (.xls) file---if you don't have the software to open this file, team up with someone who does.
+4. Take some time to understand the rows, columns, and sheets in the dataset.
+    <b>Discuss with your partner: </b> what column(s) (if any), would you primarily use to estimate the migration from one county to another? Do you understand what every column represents?
+    <b>Wait!</b> We will try to make sure everyone is on the same page after 5 minutes---feel free to think about the questions below, but don't bring up their answers to other groups.
+    <b>Discuss with your partner: </b> can you tell, from this data, how many people moved from
+    <b>Discuss with your partner: </b> what is the time period over which the migration described in the dataset is happening? As a hint, you may want to take a look at the `Inflow` file in the ACS website, and also think about the dates when the ACS was collected.
+
+## Activity 2: Implementing Iterative Proportional Fitting --- and our variation!
+
+For this activity, you can follow the notebook `IPF.ipynb`. Also, you may want pen and paper for the bonus math derivations!
+
+## Activity 3: Mapping fine-grained Migration data
+
+For this activity, you can follow either the notebook `mapping_income.ipynb` or the notebook `mapping_wildfires.ipynb`, depending on your choice. You will need some publicly available datasets, which are in the `data` directory, and MIGRATE. After filling the Workshop [DUA](https://forms.gle/MCezhZGDREvbYBMK7), you received a link to the subsection of MIGRATE we will use via Google Drive. Add MIGRATE to the `data` directory. Please remember to delete the dataset afterwards.
