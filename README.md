@@ -37,7 +37,7 @@ For this activity, you will download and follow the prompt questions to investig
 
 ## Activity 2: Implementing Iterative Proportional Fitting --- and our variation!
 
-For this activity, you can follow the notebook `IPF.ipynb`. Also, you may want pen and paper for the bonus math derivations!
+For this activity, you can follow the notebook `IPF.ipynb`. Also, you may want pen and paper for the math derivations!
 
 ## Activity 3: Mapping fine-grained Migration data
 
