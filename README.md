@@ -10,6 +10,8 @@ Clone only this branch (otherwise you will have a lot of files!):
 
 ```git clone -b workshop --single-branch https://github.com/gsagostini/MIGRATE.git```
 
+<b> Note: </b> If you do not know how to use `git`, you can directly click the `code` button on this page and then download the zipped directory.
+
 Create a conda environment with geopandas and supporting jupyter notebooks using the following command:
 
 ```conda create -n workshop_env python=3.13.5 geopandas numpy pandas matplotlib ipykernel jupyterlab -c conda-forge```
