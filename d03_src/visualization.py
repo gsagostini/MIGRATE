@@ -1258,7 +1258,8 @@ def map_fire_migration(fire_gdf,
                        fire_perimeter=None,
                        fire_color='maroon',
                        area_threshold=0.1,
-                       cmap='YlOrRd', ax=None, plot_colorbar=True, plot_legend=False, show=False, vmax=50, ax_linewidth=1,
+                       cmap='YlOrRd', ax=None, plot_colorbar=True,
+                       plot_legend=False, return_legend=False, show=False, vmax=50, ax_linewidth=1,
                        show_name=False, per_thousand=True, outmover=True,
                        textsize=15, title_fontsize=20, legend_loc='upper left', legend_bbox=(1,1)):
 
@@ -1299,15 +1300,16 @@ def map_fire_migration(fire_gdf,
                           format=mticker.FixedFormatter([f'{int(t)}%' for t in ticks]), extend='max')
         _ = cb.ax.tick_params(labelsize=textsize)
         _ = cbar_ax.axis('off')
-        _ = cbar_ax.set_title(f"Domestic {'out' if outmover else 'in'}-migration rate in {fireyear+1} (per {1000 if per_thousand else 100} people)", fontsize=title_fontsize)
+        _ = cbar_ax.set_title(f"Domestic {'out' if outmover else 'in'}-migration rate in the year after the fire (per {1000 if per_thousand else 100} people)", fontsize=title_fontsize)
 
     #Configure the categorical legend:
-    if plot_legend:
+    if plot_legend or return_legend:
         legend_elements = [Patch(facecolor='white', edgecolor=fire_color,  linestyle='--', linewidth=1.5,  label='Fire perimeter'),
                            Patch(facecolor='white', edgecolor='k',   linewidth=1, label='County boundary'),]
-        _ = ax.legend(handles=legend_elements,
-                      loc=legend_loc, bbox_to_anchor=legend_bbox, borderaxespad=0,
-                      fontsize=textsize,frameon=False)
+        if plot_legend:
+            _ = ax.legend(handles=legend_elements,
+                        loc=legend_loc, bbox_to_anchor=legend_bbox, borderaxespad=0,
+                        fontsize=textsize,frameon=False)
 
     #Configure the legend:
     if show_name and fire_name is not None:
@@ -1323,7 +1325,7 @@ def map_fire_migration(fire_gdf,
         
     if show: plt.show()
         
-    return ax
+    return ax if not return_legend else (ax, legend_elements)
     
 
 def connect_ax(ax, parent_ax,
